@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 580" role="img" aria-labelledby="title">
+  <title id="title">Girl developer wearing a cap</title>
+  <defs>
+    <linearGradient id="skin" x2="1" y2="1">
+      <stop stop-color="#e4a17e"/>
+      <stop offset="1" stop-color="#a8604c"/>
+    </linearGradient>
+    <linearGradient id="hat" x2="1" y2="1">
+      <stop stop-color="#fff4fa"/>
+      <stop offset="1" stop-color="#ba8bab"/>
+    </linearGradient>
+    <linearGradient id="shirt" x2="1" y2="1">
+      <stop stop-color="#42404e"/>
+      <stop offset="1" stop-color="#171a25"/>
+    </linearGradient>
+  </defs>
+  <!-- Long hair behind the face -->
+  <path d="M110 265 Q65 65 250 62 Q435 65 392 270 L422 493 Q350 535 308 464 H181 Q125 530 78 480 Z" fill="#292132" stroke="#684668" stroke-width="4"/>
+  <!-- Outfit and neck -->
+  <path d="M45 580 Q60 425 175 409 H325 Q440 425 455 580" fill="url(#shirt)" stroke="#72667e" stroke-width="3"/>
+  <path d="M215 359 V420 Q250 451 285 420 V359" fill="url(#skin)"/>
+  <path d="M188 415 Q250 479 311 415" fill="none" stroke="#4ee1c1" stroke-width="5"/>
+  <ellipse cx="113" cy="268" rx="28" ry="42" fill="url(#skin)"/>
+  <ellipse cx="387" cy="268" rx="28" ry="42" fill="url(#skin)"/>
+  <!-- Face -->
+  <path d="M123 190 Q124 102 250 105 Q376 105 377 190 L368 310 Q352 396 250 413 Q147 396 132 310 Z" fill="url(#skin)" stroke="#aa6a59" stroke-width="3"/>
+  <path d="M125 236 Q100 145 164 112 Q246 65 339 119 Q399 149 375 239 L351 202 Q286 191 249 146 Q210 200 143 207 Z" fill="#292132"/>
+  <path d="M145 226 Q180 210 216 229 M284 229 Q320 210 352 224" fill="none" stroke="#382532" stroke-width="10" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <path d="M146 262 Q180 240 216 262 Q211 302 182 304 Q153 302 146 262 M284 262 Q319 240 353 260 Q348 301 318 304 Q289 302 284 262" fill="#f6edf1"/>
+  <ellipse cx="188" cy="274" rx="18" ry="25" fill="#695091"/>
+  <ellipse cx="312" cy="274" rx="18" ry="25" fill="#695091"/>
+  <ellipse cx="190" cy="276" rx="9" ry="17" fill="#1b1828"/>
+  <ellipse cx="310" cy="276" rx="9" ry="17" fill="#1b1828"/>
+  <circle cx="195" cy="265" r="7" fill="white"/>
+  <circle cx="315" cy="265" r="7" fill="white"/>
+  <path d="M145 260 Q180 241 216 261 M284 261 Q320 241 354 259 M148 259 L138 249 M154 255 L147 243 M347 255 L355 243 M353 259 L363 249" fill="none" stroke="#332334" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="163" cy="315" rx="22" ry="11" fill="#dc8492" opacity=".42"/>
+  <ellipse cx="338" cy="315" rx="22" ry="11" fill="#dc8492" opacity=".42"/>
+  <path d="M248 275 L237 313 Q250 323 264 313" fill="#b47557" stroke="#9b5747" stroke-width="3"/>
+  <path d="M191 345 Q249 364 309 343 Q299 384 252 386 Q209 385 191 345" fill="#733549" stroke="#a85868" stroke-width="4"/>
+  <path d="M202 351 Q250 365 298 350 L291 365 Q250 373 210 364 Z" fill="#fff6ed"/>
+  <!-- Earrings and hair highlights -->
+  <circle cx="113" cy="304" r="8" fill="none" stroke="#4ee1c1" stroke-width="4"/>
+  <circle cx="387" cy="304" r="8" fill="none" stroke="#4ee1c1" stroke-width="4"/>
+  <path d="M115 330 Q102 410 134 466 M386 329 Q406 409 374 467" fill="none" stroke="#9d658b" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+  <!-- Cap -->
+  <path d="M112 177 Q111 54 250 47 Q383 47 384 177 Z" fill="url(#hat)" stroke="#e0d7e2" stroke-width="3"/>
+  <path d="M190 60 Q164 106 170 172 M291 55 Q323 110 321 173" fill="none" stroke="#aaa5b3" stroke-width="3"/>
+  <ellipse cx="250" cy="47" rx="11" ry="7" fill="#d4cbd5"/>
+  <path d="M110 177 Q254 153 402 175 L421 190 Q270 220 113 196 Z" fill="#24202d" stroke="#885577" stroke-width="3"/>
+</svg>

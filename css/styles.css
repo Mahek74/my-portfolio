@@ -1,0 +1,935 @@
+/* ==================================================
+   1. THEME: Change these variables to recolor the site.
+   ================================================== */
+:root {
+  --background: #090d16;
+  --text: #e9eaf0;
+  --muted: #9ca4b4;
+  --accent: #4ee1c1;
+  --border: #29313f;
+  --panel: #141b26;
+  --font: Arial, Helvetica, sans-serif;
+}
+
+/* 2. BASE AND ACCESSIBILITY */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 35%;
+  right: -220px;
+  width: 350px;
+  height: 400px;
+  background: #16c9d3;
+  filter: blur(130px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 20px;
+  z-index: 100;
+  padding: 12px;
+  background: var(--accent);
+  color: var(--background);
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding: 100px 9%;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.centered {
+  text-align: center;
+}
+
+.section-title {
+  margin: 0 0 65px;
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+/* 3. FIXED NAVIGATION */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  background: #090d16eb;
+  backdrop-filter: blur(18px);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 5%;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.header-email {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 42px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover,
+.social-links a:hover {
+  color: var(--accent);
+}
+
+.resume-link {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 15;
+  padding: 12px;
+  background: var(--background);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* 4. HERO AND GIRL CHARACTER */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  min-height: 100svh;
+  padding-top: 160px;
+  isolation: isolate;
+}
+
+.hero-intro,
+.hero-role {
+  z-index: 2;
+}
+
+.hero-kicker {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: clamp(17px, 2vw, 26px);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 3.7vw, 56px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 2px;
+}
+
+.hero-role h2 {
+  margin: 0;
+  font-size: clamp(25px, 3.2vw, 49px);
+  line-height: 1.1;
+}
+
+.hero-art {
+  position: relative;
+  align-self: end;
+}
+
+.hero-art .character {
+  width: 145%;
+  max-width: none;
+  margin-left: -22%;
+}
+
+.character {
+  width: 100%;
+  filter: drop-shadow(0 20px 35px #30dbc526);
+  animation: float 6s ease-in-out infinite;
+}
+
+.character-glow {
+  position: absolute;
+  inset: 35% 0 0;
+  z-index: -1;
+  background: radial-gradient(ellipse, #4ee1c133, transparent 70%);
+  filter: blur(20px);
+}
+
+.scroll-note {
+  position: absolute;
+  bottom: 35px;
+  left: 9%;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* 5. ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 70px;
+  min-height: 85vh;
+}
+
+.about-copy {
+  margin: 0;
+  font-size: clamp(21px, 2.35vw, 32px);
+  line-height: 1.45;
+}
+
+/* 6. SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.services-heading {
+  margin: 0;
+  font-size: clamp(50px, 7vw, 90px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.desk-scene {
+  position: relative;
+  height: 300px;
+  margin-top: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #152b34, #0d1221);
+}
+
+.desk-scene img {
+  position: absolute;
+  bottom: -50px;
+  left: 5px;
+  width: 285px;
+}
+
+.monitor {
+  position: absolute;
+  top: 42px;
+  right: 20px;
+  width: 150px;
+  height: 125px;
+  border: 7px solid #bbb8cd;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #3b2c52, #d27ba1);
+}
+
+.monitor::after {
+  content: "";
+  position: absolute;
+  top: 117px;
+  left: 60px;
+  width: 10px;
+  height: 70px;
+  background: #bbb8cd;
+}
+
+.desktop {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  left: 20px;
+  height: 13px;
+  background: #ebe9ee;
+  transform: skewY(-5deg);
+}
+
+.service-card {
+  margin-bottom: 18px;
+  padding: 30px;
+  border: 1px dashed #424b5c;
+}
+
+.service-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.service-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card summary::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.service-card[open] summary::after {
+  content: "−";
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.service-subtitle {
+  letter-spacing: 1px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  padding: 6px 11px;
+  border: 1px solid #454c5c;
+  border-radius: 20px;
+  background: #ffffff09;
+  color: #c9ced7;
+  font-size: 12px;
+}
+
+/* 7. CAREER TIMELINE */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 48%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(transparent, var(--accent));
+  box-shadow: 0 0 15px #4ee1c155;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 30% 18% 52%;
+  align-items: start;
+  padding: 25px 0 42px;
+}
+
+.job h3 {
+  margin: 0 0 15px;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.company {
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.job-year {
+  font-size: 45px;
+  line-height: 1;
+}
+
+.job-description {
+  margin: 0;
+  padding-left: 70px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* 8. PROJECT CAROUSEL */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 50px;
+  min-height: 390px;
+  padding: 55px 0;
+  border-block: 1px solid var(--border);
+}
+
+.project-information {
+  display: flex;
+  gap: 25px;
+}
+
+.project-number {
+  color: #626b7d;
+  font-size: 65px;
+  line-height: 1;
+}
+
+.project-information h3 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.project-information p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-information h4 {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--accent);
+}
+
+.project-preview {
+  overflow: hidden;
+  aspect-ratio: 1.5;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #173762, #152237);
+  box-shadow: 0 20px 80px #0005;
+}
+
+.project-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard {
+  height: 100%;
+  padding: 28px 22px;
+}
+
+.window-dots {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+
+.window-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.dashboard-window {
+  display: grid;
+  grid-template-columns: 23% 1fr;
+  gap: 12px;
+  height: 85%;
+  padding: 14px;
+  border-radius: 5px;
+  background: #edf1f7;
+  box-shadow: 0 15px 25px #0005;
+}
+
+.dashboard-sidebar {
+  padding: 10px 6px;
+  border-radius: 4px;
+  background: #d6dfeb;
+}
+
+.dashboard-sidebar div {
+  height: 5px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: #9dafc6;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dashboard-banner {
+  padding: 15px;
+  border-radius: 4px;
+  background: #0a192f;
+  color: white;
+  font-size: clamp(12px, 1.6vw, 23px);
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 8px;
+}
+
+.dashboard-cards i {
+  flex: 1;
+  border-radius: 5px;
+  background: linear-gradient(130deg, #96aabe, #dae1ec);
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--panel);
+  font-size: 22px;
+}
+
+.arrow:hover {
+  border-color: var(--accent);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.dot {
+  display: grid;
+  width: 28px;
+  height: 36px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.dot::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1px solid #626e82;
+  border-radius: 50%;
+}
+
+.dot.active::after {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 14px #4ee1c155;
+}
+
+/* 9. ANIMATED TECH SPHERES */
+.tech-stack {
+  padding-bottom: 30px;
+}
+
+.tech-stack .section-title {
+  margin-bottom: 10px;
+  font-size: clamp(34px, 6vw, 80px);
+}
+
+.orb-stage {
+  position: relative;
+  max-width: 760px;
+  height: 530px;
+  margin-inline: auto;
+}
+
+.orb {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid #ffffff70;
+  border-radius: 50%;
+  background: radial-gradient(circle at 31% 25%, #fff 0, #eee7ed 33%, #c6b8cb 65%, #6e657e 100%);
+  color: var(--color);
+  box-shadow: inset -8px -12px 22px #41364440, inset 6px 6px 16px #fff9, 0 12px 30px #0005;
+  font-size: clamp(13px, 2vw, 23px);
+  font-weight: 700;
+  text-shadow: 0 1px 0 #fff8;
+  transform: rotate(var(--rotation));
+  animation: bob 5s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.orb:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 40px #4ee1c166;
+}
+
+/* 10. FOOTER */
+.contact {
+  padding-top: 50px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 50px;
+}
+
+.contact h2 {
+  margin: 0 0 24px;
+  font-size: clamp(34px, 4vw, 55px);
+  font-weight: 400;
+}
+
+.contact-email {
+  color: var(--accent);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.social-links {
+  display: grid;
+  gap: 12px;
+}
+
+.social-links a {
+  width: max-content;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #63707e;
+  font-size: 21px;
+}
+
+.footer-credit {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* 11. ANIMATION */
+@keyframes float {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bob {
+  50% {
+    translate: 0 -22px;
+  }
+}
+
+/* 12. TABLET LAYOUT */
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 7%;
+  }
+
+  .header-email {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 850px;
+    padding-top: 160px;
+  }
+
+  .hero-art {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    width: 70%;
+    max-width: 430px;
+    margin: auto;
+  }
+
+  .hero-art .character {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-role {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .about,
+  .services {
+    gap: 35px;
+  }
+
+  .job h3 {
+    font-size: 21px;
+  }
+
+  .job-year {
+    font-size: 34px;
+  }
+
+  .job-description {
+    padding-left: 35px;
+  }
+
+  .project-layout {
+    gap: 25px;
+  }
+
+  .resume-link {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* 13. PHONE LAYOUT */
+@media (max-width: 600px) {
+  .navigation {
+    padding: 23px 6%;
+  }
+
+  .nav-links {
+    gap: 18px;
+    font-size: 11px;
+  }
+
+  .hero {
+    align-content: start;
+    min-height: 760px;
+    padding-top: 150px;
+    padding-bottom: 65px;
+    row-gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 31px;
+  }
+
+  .hero-role h2 {
+    font-size: 25px;
+  }
+
+  .hero-art {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .about,
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    gap: 15px;
+  }
+
+  .about-art {
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .about-copy {
+    font-size: 22px;
+  }
+
+  .services-heading {
+    font-size: 65px;
+  }
+
+  .desk-scene {
+    display: none;
+  }
+
+  .service-card summary {
+    font-size: 26px;
+  }
+
+  .section-title {
+    margin-bottom: 45px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .job {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding-block: 25px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .job h3 {
+    font-size: 24px;
+  }
+
+  .job-year {
+    font-size: 32px;
+  }
+
+  .job-description {
+    grid-column: 1 / 3;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .project-layout {
+    grid-template-columns: 1fr;
+    padding: 32px 0;
+  }
+
+  .project-information h3 {
+    font-size: 25px;
+  }
+
+  .project-number {
+    font-size: 52px;
+  }
+
+  .orb-stage {
+    height: 360px;
+  }
+
+  .orb {
+    width: calc(var(--size) * 0.62);
+    height: calc(var(--size) * 0.62);
+    font-size: 13px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .contact-main {
+    grid-column: 1 / 3;
+  }
+
+  .footer-credit {
+    font-size: 14px;
+  }
+
+  .contact {
+    padding-bottom: 70px;
+  }
+}
+
+/* 14. RESPECT REDUCED-MOTION PREFERENCES */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Project carousel dots */
+
+.project-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid #64748b;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.project-dot.active {
+  background: #43d9bd;
+  border-color: #43d9bd;
+  transform: scale(1.15);
+}
+
+.project-dot:hover {
+  border-color: #43d9bd;
+}
+
+.project-dot:focus-visible {
+  outline: 2px solid #43d9bd;
+  outline-offset: 4px;
+}
